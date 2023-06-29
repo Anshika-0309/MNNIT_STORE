@@ -131,7 +131,7 @@ const Item = () => {
     const getItem=async ()=>{
       try
       {
-        const res=await publicRequest.get("/stationery/find/"+id);
+        const res=await publicRequest.get("/swags/find/"+id);
         setProduct(res.data); 
       }
       catch(err)

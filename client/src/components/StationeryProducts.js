@@ -19,6 +19,7 @@ const StationeryProducts = ({cat, filters, sort}) => {
       try
       {
         const res=await axios.get("http://localhost:5000/api/stationery");
+        console.log(res.data)
         setProducts(res.data);
       }
       catch(err)

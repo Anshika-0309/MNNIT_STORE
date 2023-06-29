@@ -11,6 +11,8 @@ import Sports from "./pages/Sports";
 import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom";
 import Success from "./pages/Success";
 import { useSelector } from "react-redux";
+import StationeryItem from "./pages/StationeryItem"
+import SwagItem from "./pages/SwagItem"
 
 const App=()=>{
     const user=useSelector((state)=>state.user.currentUser);
@@ -20,23 +22,35 @@ const App=()=>{
                 <Route exact path="/">
                     <Home/>
                 </Route>
-                <Route path="/food">
+                <Route exact path="/food">
                     <Food/>
                 </Route>
-                <Route path="/sports">
+                <Route path="/food/:id">
+                    <Item/>
+                </Route>
+                <Route exact path="/sports">
                     <Sports/>
+                </Route>
+                <Route path="/sports/:id">
+                    <Item/>
                 </Route>
                 <Route exact path="/stationery">
                     <Stationery/>
                 </Route>
                 <Route path="/stationery/:id">
-                    <Item/>
+                    <StationeryItem/>
                 </Route>
-                <Route path="/swags">
+                <Route exact path="/swags">
                     <Swags/>
                 </Route>
-                <Route path="/miscellaneous">
+                <Route path="/swags/:id">
+                    <SwagItem/>
+                </Route>
+                <Route exact path="/miscellaneous">
                     <Miscellaneous/>
+                </Route>
+                <Route path="/miscellaneous/:id">
+                    <Item/>
                 </Route>
                 <Route path="/item/:id">
                     <Item/>
@@ -48,9 +62,11 @@ const App=()=>{
                     <Success/>
                 </Route>
                 <Route path="/login">
+                    {/* <Login/> */}
                     {user ? <Redirect to="/"/> : <Login/>}
                 </Route>
                 <Route path="/register">
+                    {/* <Register/> */}
                     {user ? <Redirect to="/"/> : <Register/>}
                 </Route>
             </Switch>
