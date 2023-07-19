@@ -30,7 +30,7 @@ const CategoriesBar = () => {
       <Link to="./sports">
         <Items>SPORTS</Items>
       </Link>
-      <Link to="./food">
+      <Link to="./foods">
         <Items>FOOD</Items>
       </Link>
       <Link to="./miscellaneous">

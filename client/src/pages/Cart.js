@@ -10,6 +10,7 @@ import { useState, useEffect } from 'react';
 import StripeCheckout from "react-stripe-checkout";
 import {userRequest} from "../requestMethods";
 import {useHistory} from "react-router";
+import { Link } from '@mui/material';
 
 const KEY="pk_test_51NH5hiSGE8c8iHjs8kwkReMSg6Hdk8MUVg7FAb2GGu5s56U3o5S6OYWKzaGWxZm9IbQxeaC0s3JrYyqZnQd1o7Vt00lbmoUFJm"
 
@@ -193,7 +194,7 @@ const Cart = () => {
       <Wrapper>
         <Title>YOUR BAG</Title>
         <Top>
-          <TopButton>CONTINUE SHOPPING</TopButton>
+            <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
             <TopText>Your Wishlist (0)</TopText>

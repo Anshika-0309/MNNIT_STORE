@@ -49,8 +49,8 @@ router.delete("/:id", verifyTokenAndAdmin, async(req, res)=>{
 router.get("/find/:id", async(req, res)=>{
     try
     {
-        const Food=await Food.findById(req.params.id);
-        res.status(200).json(Food);
+        const sports=await Food.findById(req.params.id);
+        res.status(200).json(sports);
     }
     catch(err)
     {

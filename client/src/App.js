@@ -13,6 +13,9 @@ import Success from "./pages/Success";
 import { useSelector } from "react-redux";
 import StationeryItem from "./pages/StationeryItem"
 import SwagItem from "./pages/SwagItem"
+import SportItem from "./pages/SportItem"
+import FoodItem from "./pages/FoodItem"
+import MiscellaneousItem from "./pages/MiscellaneousItem"
 
 const App=()=>{
     const user=useSelector((state)=>state.user.currentUser);
@@ -22,17 +25,17 @@ const App=()=>{
                 <Route exact path="/">
                     <Home/>
                 </Route>
-                <Route exact path="/food">
+                <Route exact path="/foods">
                     <Food/>
                 </Route>
-                <Route path="/food/:id">
-                    <Item/>
+                <Route path="/foods/:id">
+                    <FoodItem/>
                 </Route>
                 <Route exact path="/sports">
                     <Sports/>
                 </Route>
                 <Route path="/sports/:id">
-                    <Item/>
+                    <SportItem/>
                 </Route>
                 <Route exact path="/stationery">
                     <Stationery/>
@@ -50,7 +53,7 @@ const App=()=>{
                     <Miscellaneous/>
                 </Route>
                 <Route path="/miscellaneous/:id">
-                    <Item/>
+                    <MiscellaneousItem/>
                 </Route>
                 <Route path="/item/:id">
                     <Item/>
@@ -62,12 +65,12 @@ const App=()=>{
                     <Success/>
                 </Route>
                 <Route path="/login">
-                    {/* <Login/> */}
-                    {user ? <Redirect to="/"/> : <Login/>}
+                    <Login/>
+                    {/* {user ? <Redirect to="/"/> : <Login/>} */}
                 </Route>
                 <Route path="/register">
-                    {/* <Register/> */}
-                    {user ? <Redirect to="/"/> : <Register/>}
+                    <Register/>
+                    {/* {user ? <Redirect to="/"/> : <Register/>} */}
                 </Route>
             </Switch>
         </Router>

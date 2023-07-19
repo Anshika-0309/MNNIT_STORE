@@ -23,7 +23,7 @@
 // export default SwagsProducts;
 
 import styled from "styled-components";
-import { stationeryProducts } from "../data";
+// import { stationeryProducts } from "../data";
 import SwagProduct from "./SwagProduct";
 import axios from "axios";
 import {useState, useEffect} from "react";

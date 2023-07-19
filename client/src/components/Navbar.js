@@ -61,8 +61,24 @@ const MenuItem = styled.div`
     margin-left: 25px;
     ${mobile({ fontSize: "12px", marginLeft: "10px" })}
 `
+const Select = styled.select`
+  padding: 10px;
+  margin-right: 20px;
+  font-size: 15px;
+  ${mobile({ margin: "10px 0px" })}  
+`;
+
+const Option = styled.option``;
+
 const Navbar = () => {
   const quantity=useSelector(state=>state.cart.quantity);
+  const user=useSelector((state)=>state.user.currentUser);
+  const logout=(state) =>{
+    state.currentUse=null;
+  }
+    // const logout=()=>{
+    //     localStorage.clear();
+    // }
   return (
     <Container>
         <Wrapper>
@@ -75,12 +91,30 @@ const Navbar = () => {
             </Left>
             <Center><Logo>MNNIT</Logo></Center>
             <Right>
-                <Link to="./register">
+                {/* <Link to="./register">
                     <MenuItem>REGISTER</MenuItem>
-                </Link>
-                <Link to="./login">
-                    <MenuItem>SIGN IN</MenuItem>
-                </Link>
+                </Link> */}
+                {/* <Link to="./login">
+                    {user ? <MenuItem onClick={logout}>SIGNOUT</MenuItem> : <MenuItem>SIGNIN</MenuItem>}
+                    {/* <MenuItem></MenuItem> */}
+                {/* </Link> */} 
+                    {user ? 
+                        <Select onChange={logout}>
+                            <Option disabled selected>
+                                {user.username}
+                            </Option>
+                            <Option>
+                                SIGNOUT
+                            </Option>
+                        </Select>
+                    : 
+                    // <Link to="./register">
+                    //     <MenuItem>REGISTER</MenuItem>
+                    // </Link>
+                    <Link to="./login">
+                        <MenuItem>SIGN IN</MenuItem>
+                    </Link>
+                    }
                 <Link to="/cart">
                 <MenuItem>
                 <Badge badgeContent={quantity} color="primary">

@@ -58,7 +58,7 @@ router.get("/find/:id", async(req, res)=>{
     }
 });
 
-//GET ALL Sports
+//GET ALL SPORTS
 router.get("/", async (req, res) => {
     const qNew = req.query.new;
     const qCategory = req.query.category;
